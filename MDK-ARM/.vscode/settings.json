@@ -29,6 +29,7 @@
     "lcdcmd.h": "c",
     "lcd.h": "c",
     "motor.h": "c",
-    "stm32f1xx_hal.h": "c"
+    "stm32f1xx_hal.h": "c",
+    "initializer_list": "c"
   }
 }

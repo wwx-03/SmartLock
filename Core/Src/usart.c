@@ -24,10 +24,6 @@
 #include <string.h>
 #include "display.h"
 
-static uint8_t huart1Buffer[256];
-uint8_t huart1ReceiveBuffer[256];
-volatile uint8_t huart1IdleFlag = 1;
-
 uint8_t rx3Buffer[256];
 uint8_t tx3Buffer[256];
 
@@ -63,7 +59,7 @@ void MX_USART1_UART_Init(void)
     Error_Handler();
   }
   /* USER CODE BEGIN USART1_Init 2 */
-  HAL_UARTEx_ReceiveToIdle_IT(&huart1, huart1Buffer, sizeof(huart1Buffer)/sizeof(huart1Buffer[0]));
+  
   /* USER CODE END USART1_Init 2 */
 
 }
@@ -266,10 +262,7 @@ void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size)
   uint8_t i = 0;
   if(huart == &huart1)
   {
-    huart1IdleFlag = 1;
-    memcpy(huart1ReceiveBuffer, huart1Buffer, sizeof(huart1Buffer));
-    memset(huart1Buffer, 0, sizeof(huart1Buffer));
-    HAL_UARTEx_ReceiveToIdle_IT(&huart1, huart1Buffer, sizeof(huart1Buffer)/sizeof(huart1Buffer[0]));
+    
   }
   else if(huart == &huart3)
   {

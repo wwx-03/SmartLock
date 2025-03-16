@@ -369,7 +369,7 @@ __goto_input_password_again:
 	return retval;
 }
 
-static void System_ReportFingerprintResult(system_handle_t *system, uint16_t x, uint16_t y, as608_function_result_t resultCode)
+static void System_ReportFingerprintResult(system_handle_t *system, uint16_t x, uint16_t y, as608_retval_t resultCode)
 {
 	uint8_t keynum = 0, fingerFlag = 0;
 	Display_Clear(system->lcd);

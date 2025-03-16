@@ -1,7 +1,7 @@
 #ifndef __AS608_ERRCode_H
 #define __AS608_ERRCode_H
 
-typedef enum as608_function_result_t
+typedef enum as608_retval_t
 {
 	AS608_SUCCESS,
 	AS608_ERROR_01H,
@@ -31,6 +31,6 @@ typedef enum as608_function_result_t
 	AS608_ERROR_1DH,
 	AS608_ERROR_1EH,
 	AS608_ERROR_1FH,
-} as608_function_result_t;
+} as608_retval_t;
 
 #endif

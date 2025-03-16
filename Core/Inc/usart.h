@@ -30,9 +30,6 @@ extern "C" {
 
 /* USER CODE BEGIN Includes */
 
-extern uint8_t huart1ReceiveBuffer[256];
-extern volatile uint8_t huart1IdleFlag;
-
 extern uint8_t rx3Buffer[256];
 extern uint8_t tx3Buffer[256];
 /* USER CODE END Includes */
